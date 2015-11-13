@@ -1,23 +1,22 @@
 #pragma strict
 
-var speed = 2.4;
-var int float m_MaxSpeed = 10f;
-var int float m_JumpForce = 400f;
-var int float m_CrouchSpeed = .36f;
-var int bool m_AirControl = false;
-var int LayerMask m_WhatIsGround;
+private var is_jumping : System.Boolean;
+var max_speed : float = 10;
+var jump_force : float = 500;
+@range(0,1) var crouch_speed : float = .36;
+var what_is_ground : LayerMask;
 
-
-function Awake () {
-
+function Start () {
 }
 
-function Update () {
-	if (Input.GetAxis('Horizontal')) {
-		transform.position.x = transform.position.x + (Input.GetAxis('Horizontal') * 2);
+function Update() {
+	if (!is_jumping) {
+		is_jumping = Input.GetKeyDown("space");
 	}
-	if (Input.GetAxis('Vertical')) {
-		transform.position.y = transform.position.y + (Input.GetAxis('Vertical') * 2);
-	}
+}
+
+function FixedUpdate () {
+	var crouch = Input.GetKey(KeyCode.LeftControl);
+	var movement = Input.GetAxis('Horizontal');
 
 }
