@@ -37,8 +37,8 @@ function FixedUpdate () {
 	var movement = Input.GetAxis('Horizontal');
     var colliders : Collider2D[] = Physics2D.OverlapCircleAll(ground_check.position, grounded_radius, collisionLayer);
 
-	is_jumping = false;
 	Move(movement, crouch, is_jumping);
+	is_jumping = false;
     grounded = false;
 
     for (var i = 0; i < colliders.Length; i++) {
