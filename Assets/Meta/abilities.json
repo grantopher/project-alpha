@@ -1,0 +1,9 @@
+{
+	"playerAbilities": [
+		{
+			"name": "Kick",
+			"slug": "kick001",
+			"range": 240
+		}
+	]
+}
