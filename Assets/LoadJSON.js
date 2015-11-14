@@ -27,6 +27,10 @@ function Update () {
 
 }
 
+public function getData(dataKey : String) {
+	// return the data here.
+}
+
 class Ability extends Object {
 	public var name : String;
 	public var slug : String;
